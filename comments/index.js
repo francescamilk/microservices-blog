@@ -1,9 +1,11 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import { randomBytes } from 'crypto';
+import cors from 'cors';
 
 const app = express();
-app.use(bodyParser.json());
+app.use(bodyParser.json())
+.use(cors());
 
 const commentsByPostId = {};
 
