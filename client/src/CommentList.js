@@ -4,12 +4,15 @@ const CommentList = ({ comments }) => {
     const renderedComments = comments.map(comment => {
         let content;
 
-        if (comment.status === 'approved') {
+        switch (comment.status) {
+        case 'approved':
             content = comment.content;
-        } else if (comment.status === 'pending') {
-            content = 'Comment awaiting moderation.'
-        } else {
-            content = 'This comment has been banned.'
+            break;
+        case 'rejected':
+            content = 'This comment has been banned.';
+            break;
+        default:
+            content = 'Comment awaiting moderation.';
         }
 
         return (
