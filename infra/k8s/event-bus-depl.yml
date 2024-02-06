@@ -17,13 +17,12 @@ spec:
           image: francescamilk/event-bus
 ---
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
   name: event-bus-srv
 spec:
   selector:
     app: event-bus
-  type: ClusterIP
   ports:
     - name: event-bus
       protocol: TCP
